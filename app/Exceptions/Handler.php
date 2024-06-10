@@ -27,4 +27,9 @@ class Handler extends ExceptionHandler
             //
         });
     }
+
+    public function unauthenticated($request, $exception)
+    {
+        return response()->json(['error' => 'No autorizado'], 401);
+    }
 }
